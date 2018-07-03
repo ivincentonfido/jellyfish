@@ -36,7 +36,7 @@ def levenshtein_distance(s1, s2):
         for c in _range(1, cols):
             deletion = prev[c] + 1
             insertion = cur[c-1] + 1
-            edit = prev[c-1] + (0 if s1[r-1] == s2[c-1] else 1)
+            edit = prev[c-1] + (0 if s1[r-1] == s2[c-1] else 2)
             cur[c] = min(edit, deletion, insertion)
 
     return cur[-1]
